@@ -1,4 +1,4 @@
-![Screenshot 2024-04-10 at 15 59 44](https://github.com/dagaither/plant-fit-pro/assets/154294363/61b48cb7-8891-4481-bb37-a200284a4a55)
+![Screenshot 2024-04-18 at 00 29 07](https://github.com/dagaither/plant-fit-pro/assets/154294363/8b0c1b96-463f-48cc-9008-4edd2adfbbfb)
 
 **<h1>PlantFitPro</h1>**
 
