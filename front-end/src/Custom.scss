@@ -199,3 +199,70 @@ a:hover {
 .closeButton:hover {
   background-color: #4c4c4cc1;
 }
+
+.homeCard {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.workoutCardClosed {
+  margin: 2rem; 
+  max-width: 600px; 
+  width: "100%"; 
+  max-height: 110px;
+  overflow-y: hidden;
+}
+
+.workoutCardOpen {
+  margin: 2rem; 
+  max-width: 600px; 
+  width: "100%"; 
+  max-height: 366px;
+  overflow-y: auto;
+}
+
+.deletePlan {
+  max-width: 600px;
+  width: 100%;
+  height: 55px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .mainH1 {
+      font-size: 3rem; /* Adjust the font size for mobile devices */
+  }
+  .video-container {
+      max-width: 100%;
+  }
+  .homeCard {
+    max-width: 90%;
+  }
+  .generateButton {
+    font-size: medium;
+  }
+  .workoutCardClosed {
+    margin: 2rem; 
+    max-width: 300px; 
+    width: "100%"; 
+    max-height: 130px;
+    overflow-y: hidden;
+  }
+  .workoutCardOpen {
+    margin: 2rem; 
+    max-width: 300px; 
+    width: "100%"; 
+    max-height: 366px;
+    overflow-y: auto;
+  }
+  .cardName {
+    font-size: 16px;
+    margin: 10px;
+  }
+  .varNameContainer {
+    height: 42px;
+  }
+  .deletePlan {
+    max-width: 300px;
+  }
+}

@@ -14,7 +14,7 @@ const VideoComponent = () => {
   const videoId = 'JXHV5xdQAWo';
 
   return (
-    <div className="video-container" style={{marginTop: "4rem"}}>
+    <div className="video-container" style={{marginTop: "4rem", maxWidth: "100%"}}>
       <YouTube videoId={videoId} opts={opts} />
     </div>
   );

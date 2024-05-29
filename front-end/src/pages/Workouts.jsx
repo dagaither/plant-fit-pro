@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { Button, Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
-
+import { Card, CardBody, CardTitle, Button, Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+import { Link } from 'react-router-dom';
 const Workouts = () => {
     const token = localStorage.getItem('token');
     const config = {
@@ -53,16 +53,26 @@ const Workouts = () => {
     return (
         <div>
             <h2 className="mainH2">Workouts</h2>
-            <div style={{ width: "600px", margin: "0 auto", textAlign: "left" }}>
+            <Card className="homeCard">
+                <CardBody>
+                    <CardTitle>
+                        <div style={{ textAlign: "center" }}>
+                            Welcome to our Workout Generator page, where you can create personalized strength training plans based on your weekly commitment to the gym. Whether you're able to hit the gym two days a week or up to five, our custom-made workout plans are tailored to help you achieve your strength and fitness goals.
+                        </div>
+                    </CardTitle>
+                </CardBody>
+            </Card>
+
+            {/* <div style={{ width: "600px", margin: "0 auto" }}>
                 <p>
                     Welcome to our Workout Generator page, where you can create personalized strength training plans based on your weekly commitment to the gym. Whether you're able to hit the gym two days a week or up to five, our custom-made workout plans are tailored to help you achieve your strength and fitness goals.
                 </p>
-            </div>
+            </div> */}
             <h2 className="mainH2">Generate</h2>
             <div className="buttonContainer2">
                 <Dropdown isOpen={dropdownOpen} toggle={toggleDropdown}>
                     <DropdownToggle caret>
-                        {selectedOption ? `${selectedOption} Days Per Week` : 'Days per Week'}
+                        {selectedOption ? `${selectedOption} Days / Week` : 'Days per Week'}
                     </DropdownToggle>
                     <DropdownMenu>
                         <DropdownItem onClick={() => handleDropdownSelect('two')}>2</DropdownItem>
@@ -73,13 +83,14 @@ const Workouts = () => {
                 </Dropdown>
                 <Button className="generateButton" style={{ marginLeft: "10px" }} onClick={handleButtonClick} disabled={selectedOption ? false : true}>
                     Generate Workout
-                </Button>
+                </Button><br /><br />
             </div>
             {loading ? (
                 <p>Loading...</p>
             ) : (
                 <>
-                    {successMessage && <a href="../myworkouts/"><p style={{ color: '' }}>{successMessage}</p></a>}
+                    {/* {successMessage && <a href="../myworkouts/"><p style={{ color: '' }}>{successMessage}</p></a>} */}
+                    {successMessage && <Link tag="link" to="/myworkouts"><p style={{ color: '' }}>{successMessage}</p></Link>}
                     {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
                 </>
             )}

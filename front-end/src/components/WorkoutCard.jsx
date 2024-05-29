@@ -12,6 +12,7 @@ const WorkoutCard = ({ id, name, muscle, instructions }) => {
     const [varInstructions, setVarInstructions] = useState(instructions)
     const [done, setDone] = useState(true)
     const [checked, setChecked] = useState(false)
+    const [workoutClass, setWorkoutClass] = useState("workoutCardClosed")
     const config = {
         headers: {
             Authorization: `Token ${token}`
@@ -32,7 +33,12 @@ const WorkoutCard = ({ id, name, muscle, instructions }) => {
 
     const toggleDone = () => {
         setDone(prevDone => !prevDone);
-    }
+        if (workoutClass === "workoutCardClosed") {
+            setWorkoutClass("workoutCardOpen")
+        } else {
+            setWorkoutClass("workoutCardClosed")
+        };
+    };
 
     const toggleCheck = () => {
         setChecked(prevChecked => !prevChecked)
@@ -41,7 +47,8 @@ const WorkoutCard = ({ id, name, muscle, instructions }) => {
     
 
     return (
-        <Card style={{ margin: "2rem", width: "600px", maxHeight: done ? "110px" : "366px", overflowY: done ? "hidden" : "auto" }}>
+        // <Card style={{ margin: "2rem", maxWidth: "600px", width: "100%", maxHeight: done ? "110px" : "366px", overflowY: done ? "hidden" : "auto" }}>
+        <Card className={workoutClass}>
             <CardBody>
                 <CardTitle>
                     <div style={{ textAlign: "center" }}>
@@ -49,9 +56,11 @@ const WorkoutCard = ({ id, name, muscle, instructions }) => {
                     <img src={checked ? checkboxFilled : checkboxEmpty} style={{ width: "32px", height: "32px", borderRadius: "50%" }} onClick={toggleCheck}/>
                     </div>
                         {/* <h3 style={{color: "#2f2f2f"}}>Muscle: {varMuscle}</h3> */}
+                        <div className="varNameContainer">
                         <h4 className="cardName" style={{ textDecoration: checked ? "line-through" : "none", color: checked ? "#6c757d" : "inherit" }}>{varName}</h4>
+                        </div>
                         <div className="buttonContainer">
-                        <Button disabled={checked ? true : false} className="exerciseButton" onClick={toggleDone}>{done ? "Open" : "Close"}</Button> 
+                        <Button disabled={checked ? true : false} className="exerciseButton" onClick={toggleDone}>{done ? "Instructions" : "Close"}</Button> 
                         <Button disabled={checked ? true : false} className="exerciseButton" onClick={() => regenerateExercise(id)}>Regenerate</Button>
                         </div>
                     </div>

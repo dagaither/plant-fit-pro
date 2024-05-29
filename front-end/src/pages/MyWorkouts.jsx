@@ -125,7 +125,7 @@ const MyWorkouts = () => {
                     ))}
                     <hr></hr>
                     {currentWorkout.id ? 
-                    <Button color="danger" style={{width: "600px", height: "55px", marginBottom: "20px"}} onClick={handleDeletePlan}>Delete Plan</Button>
+                    <Button color="danger" className="deletePlan" onClick={handleDeletePlan}>Delete Plan</Button>
                     : null}
                     <hr></hr>
                 </div>

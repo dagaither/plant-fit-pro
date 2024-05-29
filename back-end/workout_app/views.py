@@ -92,6 +92,7 @@ class AllWorkoutRoutines(APIView):
         user_workout, _ = Workout.objects.get_or_create(app_user=self.request.user)
         ser_user_workout = WorkoutSerializer(user_workout)
         serialized_data = ser_user_workout.data
+        print(self.request.user)
         return Response(serialized_data, status=HTTP_200_OK)
 
 class AWorkoutRoutine(APIView):

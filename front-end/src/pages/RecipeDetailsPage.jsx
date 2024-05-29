@@ -63,11 +63,11 @@ const Recipes = () => {
         <div>
             {recipe && (
                 <div>
-                    <div style={{maxWidth: "800px", margin: "0 auto"}}>
+                    <div style={{maxWidth: "800px", margin: "0 auto", padding: ".5vw"}}>
                     <h2 className="mainH2">{recipe.title}</h2>
                     </div>
-                    <div className="card-container" style={{ marginTop: "2rem", width: "100%", display: "flex", flexDirection: "column", alignItems: "center" }}>
-                        <Card style={{ margin: "2rem", width: "600px" }}>
+                    <div className="card-container" style={{ marginTop: "2rem", maxWidth: "100%", display: "flex", flexDirection: "column", alignItems: "center" }}>
+                        <Card style={{ margin: "2rem", maxWidth: "600px" }}>
                             <CardImg top src={recipe.image} alt={recipe.title} />
                             <CardBody>
                                 <CardTitle style={{ marginTop: "15px", fontFamily: "Courier New" }}>
