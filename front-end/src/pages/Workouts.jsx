@@ -56,7 +56,7 @@ const Workouts = () => {
             <Card className="homeCard">
                 <CardBody>
                     <CardTitle>
-                        <div style={{ textAlign: "center" }}>
+                        <div style={{ textAlign: "center", fontFamily: "Courier New" }}>
                             Welcome to our Workout Generator page, where you can create personalized strength training plans based on your weekly commitment to the gym. Whether you're able to hit the gym two days a week or up to five, our custom-made workout plans are tailored to help you achieve your strength and fitness goals.
                         </div>
                     </CardTitle>
