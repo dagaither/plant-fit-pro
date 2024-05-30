@@ -37,7 +37,6 @@ const HomePage = () => {
                     </CardTitle>
                 </CardBody>
             </Card>
-                        <Link tag={Link} to="/workouts" className="generateLink">Start generating plans and recipes now!</Link>
     </div>
     </>
     )
