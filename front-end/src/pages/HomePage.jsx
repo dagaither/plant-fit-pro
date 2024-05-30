@@ -27,11 +27,13 @@ const HomePage = () => {
     <div style={{display: "flex", flexDirection: "column"}}>
     <h1 className="mainH1">PlantFitPro</h1>
     {/* <VideoComponent /> */}
-    <Card className="homeCard">
+    <Card className="homeCard" style={{marginTop: "10px"}}>
                 <CardBody>
                     <CardTitle>
-                        <div style={{ textAlign: "center" }}>
-                        Welcome to our innovative plant-based fitness and nutrition app! We offer personalized fitness plans tailored to users' goals plus a library of over 350 healthy plant-based recipes from Michelin rated chefs!  Start generating plans and recipes now!
+                        <div style={{ textAlign: "center", fontFamily: "Courier New" }}>
+                        Welcome to our innovative plant-based fitness and nutrition app! We offer personalized fitness plans tailored to users' goals plus a library of over 350 healthy plant-based recipes from Michelin rated chefs!  
+                        <br /><br />
+                        <Link tag={Link} to="/workouts" style={{color: "#2f2f2f", fontWeight: "bold"}}>Start generating plans and recipes now!</Link>
                         </div>
                     </CardTitle>
                 </CardBody>

@@ -17,7 +17,7 @@ const MyWorkouts = () => {
     const [workoutIds, setWorkoutIds] = useState([]);
     const [activeWorkoutId, setActiveWorkoutId] = useState("");
     const [currentWorkout, setCurrentWorkout] = useState({});
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
     const [exerciseId, setExerciseId] = useState("");
 
     const toggleDropdown = () => {
@@ -78,6 +78,7 @@ const MyWorkouts = () => {
             {workoutIds.length > 0 ? (
         <>
             <h2 className="mainH2">My Workouts</h2>
+            <strong> In the gym?  Check each exercise off when finished! </strong>
             <Dropdown isOpen={dropdownOpen} toggle={toggleDropdown} style={{marginTop: "20px", marginBottom: "20px"}}>
                 <DropdownToggle caret>
                     {selectedOption !== null ? `${selectedOption}` : 'Saved Routines'}
