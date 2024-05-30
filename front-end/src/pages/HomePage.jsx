@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Form, Link } from 'react-router-dom'
-import { Card, CardBody, CardTitle } from 'reactstrap'
+import { Card, CardBody, CardTitle, Button } from 'reactstrap'
 import rickLogo from '../assets/rick-svgrepo-com.svg'
 import mortyLogo from '../assets/morty-svgrepo-com.svg'
 import juice from '../assets/juice.svg'
@@ -20,7 +20,7 @@ const HomePage = () => {
     <Link tag="link" to="/recipes">
     <img src={blender} className="logo" alt="Vite logo" />
     </Link>
-    <Link tag="link" to="/workout">
+    <Link tag="link" to="/workouts">
     <img src={dumbbell} className="logo react"/>
     </Link>
     </div>
