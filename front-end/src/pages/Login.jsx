@@ -116,7 +116,7 @@ const Login = () => {
             </Form>
             {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
             <p>Don't have an account?  <Link tag="link" to="/signup">Sign up!</Link></p>
-            <Button onClick={handleGuestLogin}>Click here to view the site as a guest</Button>
+            <Button onClick={handleGuestLogin} style={{color: "#97ce00"}}>Click here to view the site as a guest</Button>
             </div>
         </>
     )
