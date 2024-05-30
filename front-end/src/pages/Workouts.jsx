@@ -53,7 +53,7 @@ const Workouts = () => {
             const response = await api.get(`/v1/workout/userplans/generate/${selectedOption}_dpw/`, config);
             if (response.status >= 200 && response.status < 300) {
                 setLoading(false)
-                setSuccessMessage("Workout added to My Workouts!");
+                setSuccessMessage("Added to My Workouts!");
             } else {
                 setLoading(false)
                 setErrorMessage("Failed to add workout. Please try again later.");
@@ -81,10 +81,10 @@ const Workouts = () => {
 
     return (
         <div>
-            <h2 className="mainH2">Workouts</h2>
+            <h2 className="mainH2">Workout Generator</h2>
             <Card className="homeCard">
                 <CardBody>
-                    <CardTitle>
+                    <CardTitle style={{marginBottom: "0px"}}>
                         <div style={{ textAlign: "center", fontFamily: "Courier New" }}>
                             Use our Workout Generator to create personalized strength training plans based on your weekly commitment to the gym. Whether you're able to hit the gym two days a week or up to five, our custom-made workout plans are tailored to help you achieve your strength and fitness goals.
                         </div>
@@ -92,8 +92,8 @@ const Workouts = () => {
                 </CardBody>
             </Card>
 
-            <h2 className="mainH2">Generate</h2>
-            <div className="buttonContainer2">
+            {/* <h2 className="mainH2">Generate</h2> */}
+            <div className="buttonContainer2" style={{marginTop: "10px"}}>
                 <Dropdown isOpen={dropdownOpen} toggle={toggleDropdown}>
                     <DropdownToggle caret>
                         {selectedOption ? `${selectedOption} Days / Week` : 'Days per Week'}
@@ -122,11 +122,11 @@ const Workouts = () => {
                     </DropdownMenu>
                 </Dropdown>
                 <Button className="generateButton" style={{ marginLeft: "10px" }} onClick={handleButtonClick} disabled={selectedOption ? false : true}>
-                    Generate Workout
+                    Generate
                 </Button><br /><br />
-                <Button className="generateButton" style={{ marginLeft: "10px" }} onClick={handleMyWorkoutsClick}>
+                {/* <Button className="generateButton" onClick={handleMyWorkoutsClick}>
                     My Workouts
-                </Button><br /><br />
+                </Button><br /><br /> */}
             </div>
             {loading ? (
                 <p>Loading...</p>
