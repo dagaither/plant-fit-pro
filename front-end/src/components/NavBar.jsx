@@ -36,7 +36,11 @@ function NavBar() {
   return (
     <div>
       <Navbar className="navbar-expand-sm navbar-light bg-secondary fixed-top" style={{maxWidth: "100%"}}>
-        <NavbarBrand><navbar-brand style={{ color: '#98CE00' }}><Link tag={Link} to="/" style={{ color: '#98CE00' }}>PlantFitPro</Link></navbar-brand></NavbarBrand>
+        {token ? (
+        <NavbarBrand><navbar-brand><Link tag={Link} to="/" style={{ color: '#98CE00' }}>PlantFitPro</Link></navbar-brand></NavbarBrand>
+        ) : (
+        <NavbarBrand><navbar-brand style={{ color: '#98CE00' }}>PlantFitPro</navbar-brand></NavbarBrand>
+        )}
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           {token ? (
