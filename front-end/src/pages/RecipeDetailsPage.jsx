@@ -73,7 +73,7 @@ const Recipes = () => {
                             <CardBody>
                                 <CardTitle style={{ marginTop: "15px", fontFamily: "Courier New" }}>
                                     <div style={{ display: "flex", flexDirection: "column" }}>
-                                        <span><h2>{recipe.title}</h2></span><br />
+                                        <span><h2><strong>{recipe.title}</strong></h2></span><br />
                                         <span>{recipe.description}</span><br />
                                         <div style={{ textAlign: "left" }}>
                                             <span style={{ fontWeight: "bold" }}>Ingredients:</span><br />

@@ -62,7 +62,7 @@ function NavBar() {
                   Recipes
                 </DropdownToggle>
                 <DropdownMenu right>
-                  <DropdownItem><NavLink className="navLink" tag={Link} to="/recipes" onClick={closeNavBar}>Recipe Generator</NavLink></DropdownItem>
+                  <DropdownItem><NavLink className="navLink" tag={Link} to="/recipes" onClick={closeNavBar}>Random Recipe</NavLink></DropdownItem>
                   <DropdownItem><NavLink className="navLink" tag={Link} to="/favorites" onClick={closeNavBar}>Favorites</NavLink></DropdownItem>
                 </DropdownMenu>
               </UncontrolledDropdown>

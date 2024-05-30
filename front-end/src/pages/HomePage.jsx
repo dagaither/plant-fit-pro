@@ -30,8 +30,8 @@ const HomePage = () => {
     <Card className="homeCard" style={{marginTop: "10px"}}>
                 <CardBody>
                     <CardTitle>
-                        <div style={{ textAlign: "center", fontFamily: "Courier New" }}>
-                        Welcome to our innovative plant-based fitness and nutrition app! We offer personalized fitness plans tailored to users' goals plus a library of over 350 healthy plant-based recipes from Michelin rated chefs!  
+                        <div style={{ textAlign: "center", fontFamily: "Courier New", fontWeight: "bold" }}>
+                        Welcome to our plant-based fitness and nutrition app! We offer personalized fitness plans tailored to work with your busy schedule plus a library of over 350 healthy plant-based recipes from Michelin rated chefs!  
                         <br/><br/>Explore the navigation bar to browse and favorite recipes, generate workout routines, and managed saved routines.
                         </div>
                     </CardTitle>

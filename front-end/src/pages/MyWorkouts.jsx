@@ -2,7 +2,10 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { api } from '../utilities.jsx'
 import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem, Button } from 'reactstrap';
+import { Card, CardBody, CardTitle } from 'reactstrap';
 import WorkoutCard from '../components/WorkoutCard';
+import dumbbell from '../assets/dumbbell3.svg'
+
 
 const MyWorkouts = () => {
     const token = localStorage.getItem('token');
@@ -78,7 +81,19 @@ const MyWorkouts = () => {
             {workoutIds.length > 0 ? (
         <>
             <h2 className="mainH2">My Workouts</h2>
-            <strong> In the gym?  Check each exercise off when finished! </strong>
+            <Card className="homeCard">
+            <CardBody>
+                <div style={{ display: 'flex', alignItems: 'center' }}>
+                    <CardTitle style={{ marginBottom: "0px", flex: 1 }}>
+                        <div style={{ textAlign: "left", fontFamily: "Courier New", fontWeight: "bold" }}>
+                            Use the dropdown to load your saved workout routines.  In the gym?  Check off each exercise as you complete them!
+                        </div>
+                    </CardTitle>
+                    <img src={dumbbell} alt="Dumbbell" style={{ marginLeft: '20px', width: '100px', height: '100px' }} />
+                </div>
+            </CardBody>
+        </Card>
+            {/* <strong> In the gym?  Check each exercise off when finished! </strong> */}
             <Dropdown isOpen={dropdownOpen} toggle={toggleDropdown} style={{marginTop: "20px", marginBottom: "20px"}}>
                 <DropdownToggle caret>
                     {selectedOption !== null ? `${selectedOption}` : 'Saved Routines'}

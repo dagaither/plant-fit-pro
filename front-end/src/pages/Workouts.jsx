@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { Card, CardBody, CardTitle, Button, Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import { api } from '../utilities.jsx';
+import dumbbell from '../assets/dumbbell3.svg'
+
 
 const Workouts = () => {
     const token = localStorage.getItem('token');
@@ -83,14 +85,17 @@ const Workouts = () => {
         <div>
             <h2 className="mainH2">Workout Generator</h2>
             <Card className="homeCard">
-                <CardBody>
-                    <CardTitle style={{marginBottom: "0px"}}>
-                        <div style={{ textAlign: "center", fontFamily: "Courier New" }}>
-                            Use our Workout Generator to create personalized strength training plans based on your weekly commitment to the gym. Whether you're able to hit the gym two days a week or up to five, our custom-made workout plans are tailored to help you achieve your strength and fitness goals.
+            <CardBody>
+                <div style={{ display: 'flex', alignItems: 'center' }}>
+                    <CardTitle style={{ marginBottom: "0px", flex: 1 }}>
+                        <div style={{ textAlign: "left", fontFamily: "Courier New", fontWeight: "bold" }}>
+                            Use our Workout Generator to create strength training plans based on your weekly availability. Whether you're able to hit the gym 2, 3, 4 or even 5 days per week, our custom plans are tailored to help you maximize gains and get <font color="#97ce00">more juice for the squeeze</font>.
                         </div>
                     </CardTitle>
-                </CardBody>
-            </Card>
+                    <img src={dumbbell} alt="Dumbbell" style={{ marginLeft: '20px', width: '100px', height: '100px' }} />
+                </div>
+            </CardBody>
+        </Card>
 
             <div className="buttonContainer2" style={{marginTop: "10px"}}>
                 <Dropdown isOpen={dropdownOpen} toggle={toggleDropdown}>
