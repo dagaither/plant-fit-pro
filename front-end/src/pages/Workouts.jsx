@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { Card, CardBody, CardTitle, Button, Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import { api } from '../utilities.jsx';
 
@@ -132,7 +132,7 @@ const Workouts = () => {
                 <p>Loading...</p>
             ) : (
                 <>
-                    {successMessage && <Link tag="link" to="/myworkouts"><p style={{ color: '' }}>{successMessage}</p></Link>}
+                    {successMessage && <Link tag={Link} to="/myworkouts"><p style={{ color: '' }}>{successMessage}</p></Link>}
                     {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
                 </>
             )}
