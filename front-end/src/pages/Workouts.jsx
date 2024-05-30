@@ -92,7 +92,6 @@ const Workouts = () => {
                 </CardBody>
             </Card>
 
-            {/* <h2 className="mainH2">Generate</h2> */}
             <div className="buttonContainer2" style={{marginTop: "10px"}}>
                 <Dropdown isOpen={dropdownOpen} toggle={toggleDropdown}>
                     <DropdownToggle caret>
@@ -124,9 +123,6 @@ const Workouts = () => {
                 <Button className="generateButton" style={{ marginLeft: "10px" }} onClick={handleButtonClick} disabled={selectedOption ? false : true}>
                     Generate
                 </Button><br /><br />
-                {/* <Button className="generateButton" onClick={handleMyWorkoutsClick}>
-                    My Workouts
-                </Button><br /><br /> */}
             </div>
             {loading ? (
                 <p>Loading...</p>
