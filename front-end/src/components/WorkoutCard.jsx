@@ -1,6 +1,7 @@
 import { Card, CardBody, CardTitle, Button } from 'reactstrap';
 import { useState } from 'react';
 import axios from "axios";
+import { api } from '../utilities.jsx'
 import checkboxFilled from "../assets/checkboxFilled.svg"
 import checkboxEmpty from "../assets/checkboxEmpty.svg"
 
@@ -21,7 +22,7 @@ const WorkoutCard = ({ id, name, muscle, instructions }) => {
 
     const regenerateExercise = async (id) => {
         try {
-            const response = await axios.get(`http://127.0.0.1:8000/api/v1/workout/userplans/regenerate/${id}/`, config);
+            const response = await api.get(`/v1/workout/userplans/regenerate/${id}/`, config);
             console.log(response);
             setVarName(response.data.exercise.name)
             // setVarMuscle(response.data.exercise.muscle)
@@ -41,7 +42,8 @@ const WorkoutCard = ({ id, name, muscle, instructions }) => {
     };
 
     const toggleCheck = () => {
-        setChecked(prevChecked => !prevChecked)
+        setChecked(prevChecked => !prevChecked);
+        setWorkoutClass("workoutCardClosed")
     }
     
     

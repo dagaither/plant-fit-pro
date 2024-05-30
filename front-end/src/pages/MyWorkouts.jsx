@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { api } from '../utilities.jsx'
 import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem, Button } from 'reactstrap';
 import WorkoutCard from '../components/WorkoutCard';
 
@@ -31,7 +32,7 @@ const MyWorkouts = () => {
 
     const handleDeletePlan = async () => {
         try {
-            const response = await axios.delete(`http://127.0.0.1:8000/api/v1/workout/userplans/delete/${activeWorkoutId}/`, config);
+            const response = await api.delete(`/v1/workout/userplans/delete/${activeWorkoutId}/`, config);
             console.log(response);
             const updatedWorkoutIds = workoutIds.filter(workout => workout.id !== activeWorkoutId);
             setWorkoutIds(updatedWorkoutIds)
@@ -46,7 +47,7 @@ const MyWorkouts = () => {
     useEffect(() => {
         const fetchWorkouts = async () => {
             try {
-                const response = await axios.get('http://127.0.0.1:8000/api/v1/workout/userplans/all/', config);
+                const response = await api.get('/v1/workout/userplans/all/', config);
                 const sortedWorkoutIds = response.data.workout_routines.sort((a,b) => {
                     return a.days.length -  b.days.length;
                 });
@@ -63,7 +64,7 @@ const MyWorkouts = () => {
     const fetchWorkout = async (workoutId) => {
         try {
             setLoading(true);
-            const response = await axios.get(`http://127.0.0.1:8000/api/v1/workout/userplans/${workoutId}/`, config);
+            const response = await api.get(`/v1/workout/userplans/${workoutId}/`, config);
             setCurrentWorkout(response.data);
         } catch (error) {
             console.error('Error fetching workout', error);

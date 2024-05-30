@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { api } from '../utilities.jsx'
 import { Card, CardBody, CardTitle, Button, Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import { Link } from 'react-router-dom';
 const Workouts = () => {
@@ -29,7 +30,7 @@ const Workouts = () => {
     const handleButtonClick = async () => {
         try {
             setLoading(true)
-            const response = await axios.get(`http://127.0.0.1:8000/api/v1/workout/userplans/generate/${selectedOption}_dpw/`, config);
+            const response = await api.get(`/v1/workout/userplans/generate/${selectedOption}_dpw/`, config);
             if (response.status >= 200 && response.status < 300) {
                 setLoading(false)
                 setSuccessMessage("Workout added to My Workouts!");

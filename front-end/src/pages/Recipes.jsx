@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { api } from '../utilities.jsx'
 import { Card, CardImg, CardBody, CardTitle, Button } from 'reactstrap';
 
 const Recipes = () => {
@@ -18,7 +19,7 @@ const Recipes = () => {
     useEffect(() => {
         const fetchRecipes = async () => {
             try {
-                const response = await axios.get('http://127.0.0.1:8000/api/v1/recipe/', config);
+                const response = await api.get('/v1/recipe/', config);
                 setRecipe(response.data);
             } catch (error) {
                 console.error('Error fetching recipes', error);
@@ -30,7 +31,7 @@ const Recipes = () => {
     useEffect(() => {
         const fetchFavorites = async () => {
             try {
-                const response = await axios.get('http://127.0.0.1:8000/api/v1/recipe/favorite/', config);
+                const response = await api.get('/v1/recipe/favorite/', config);
                 setFavoriteRecipes(response.data.map(item => item.dish.id));
             } catch (error) {
                 console.error('Error fetching favorites', error);
@@ -46,12 +47,12 @@ const Recipes = () => {
     const handleSubmit = async () => {
         try {
             if (favoriteRecipes.includes(recipe.id)) {
-                const response = await axios.delete(`http://127.0.0.1:8000/api/v1/recipe/favorite/del/${recipe.id}/`, config);
+                const response = await api.delete(`/v1/recipe/favorite/del/${recipe.id}/`, config);
                 setSuccessMessage(response.data);
                 // Remove the recipe from favoriteRecipes state
                 setFavoriteRecipes(prevState => prevState.filter(id => id !== recipe.id));
             } else {
-                const response = await axios.get(`http://127.0.0.1:8000/api/v1/recipe/favorite/add/${recipe.id}/`, config);
+                const response = await api.get(`/v1/recipe/favorite/add/${recipe.id}/`, config);
                 setSuccessMessage(response.data);
                 // Add the recipe to favoriteRecipes state
                 setFavoriteRecipes(prevState => [...prevState, recipe.id]);

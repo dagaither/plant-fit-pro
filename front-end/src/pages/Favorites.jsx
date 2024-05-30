@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { api } from '../utilities.jsx'
 import React, { useState, useEffect } from 'react';
 import RecipeCard from '../components/RecipeCard';
 
@@ -14,7 +15,7 @@ const Favorites = () => {
     useEffect(() => {
         const fetchFavorites = async () => {
             try {
-                const response = await axios.get('http://127.0.0.1:8000/api/v1/recipe/favorite/', config);
+                const response = await api.get('/v1/recipe/favorite/', config);
                 setFavoriteRecipes(response.data);
                 console.log(favoriteRecipes)
             } catch (error) {
@@ -26,7 +27,7 @@ const Favorites = () => {
 
     const removeRecipeFromFavorites = async (recipeId) => {
         try {
-            await axios.delete(`http://127.0.0.1:8000/api/v1/recipe/favorite/del/${recipeId}/`, config);
+            await api.delete(`/v1/recipe/favorite/del/${recipeId}/`, config);
             setFavoriteRecipes(favoriteRecipes.filter(recipe => recipe.dish.id !== recipeId));
         } catch (error) {
             console.error('Error removing recipe from favorites', error);

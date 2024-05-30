@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { api } from '../utilities.jsx'
 import { useState, useEffect } from 'react';
 import { Form, FormGroup, Label, Input, Button } from 'reactstrap';
 import { Link, useNavigate } from 'react-router-dom';
@@ -18,7 +19,7 @@ const Login = () => {
                 "password": "xyz123"
             };
 
-            const response = await axios.post("http://127.0.0.1:8000/api/v1/users/login/", userData, {
+            const response = await api.post("/v1/users/login/", userData, {
                 headers: {
                     'Content-Type': 'application/json'
                 }
@@ -47,7 +48,7 @@ const Login = () => {
                 "password": password
             };
 
-            let response = await axios.post("http://127.0.0.1:8000/api/v1/users/login/", userData, {
+            let response = await api.post("/v1/users/login/", userData, {
                 headers: {
                     'Content-Type': 'application/json'
                 }
