@@ -117,8 +117,13 @@ a:hover {
 //   font-style: normal;
 // }
 
-.navLink {
-  // color: #fffffc;
+.generateLink {
+  color: #2f2f2f;
+  font-weight: bold;
+}
+
+.generateLink:hover {
+  color: #97ce00;
 }
 
 .navLink:hover {
