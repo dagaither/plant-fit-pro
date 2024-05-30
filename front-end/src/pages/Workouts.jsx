@@ -3,6 +3,8 @@ import { useNavigate, Link } from 'react-router-dom';
 import { Card, CardBody, CardTitle, Button, Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import { api } from '../utilities.jsx';
 import dumbbell from '../assets/dumbbell3.svg'
+import blender from '../assets/blender5.svg'
+
 
 
 const Workouts = () => {
@@ -87,12 +89,12 @@ const Workouts = () => {
             <Card className="homeCard">
             <CardBody>
                 <div style={{ display: 'flex', alignItems: 'center' }}>
+                    <img src={blender} alt="Blender" style={{ marginRight: '20px', width: '100px', height: '100px' }} />
                     <CardTitle style={{ marginBottom: "0px", flex: 1 }}>
                         <div style={{ textAlign: "left", fontFamily: "Courier New", fontWeight: "bold" }}>
                             Use our Workout Generator to create strength training plans based on your weekly availability. Whether you're able to hit the gym 2, 3, 4 or even 5 days per week, our custom plans are tailored to help you maximize gains and get <font color="#97ce00">more juice for the squeeze</font>.
                         </div>
                     </CardTitle>
-                    <img src={dumbbell} alt="Dumbbell" style={{ marginLeft: '20px', width: '100px', height: '100px' }} />
                 </div>
             </CardBody>
         </Card>

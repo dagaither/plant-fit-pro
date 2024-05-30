@@ -84,12 +84,12 @@ const MyWorkouts = () => {
             <Card className="homeCard">
             <CardBody>
                 <div style={{ display: 'flex', alignItems: 'center' }}>
+                    <img src={dumbbell} alt="Dumbbell" style={{ marginRight: '20px', width: '80px', height: '80px' }} />
                     <CardTitle style={{ marginBottom: "0px", flex: 1 }}>
                         <div style={{ textAlign: "left", fontFamily: "Courier New", fontWeight: "bold" }}>
                             Use the dropdown to load your saved workout routines.  In the gym?  Check off each exercise as you complete them!
                         </div>
                     </CardTitle>
-                    <img src={dumbbell} alt="Dumbbell" style={{ marginLeft: '20px', width: '100px', height: '100px' }} />
                 </div>
             </CardBody>
         </Card>
